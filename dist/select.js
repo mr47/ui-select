@@ -1,7 +1,7 @@
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.19.6 - 2016-11-14T10:58:20.950Z
+ * Version: 0.19.6 - 2016-11-14T11:44:56.294Z
  * License: MIT
  */
 
@@ -1495,7 +1495,7 @@ uis.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
       });
 
       function setAllowClear(allow) {
-        $select.allowClear = (angular.isDefined(allow)) ? (allow === '') ? true : (allow.toLowerCase() === 'true') : false;
+        $select.allowClear = (angular.isDefined(allow)) ? (allow === '') ? true : (allow.toString().toLowerCase() === 'true') : false;
       }
 
       attrs.$observe('allowClear', setAllowClear);

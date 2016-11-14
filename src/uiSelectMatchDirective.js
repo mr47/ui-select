@@ -22,7 +22,7 @@ uis.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
       });
 
       function setAllowClear(allow) {
-        $select.allowClear = (angular.isDefined(allow)) ? (allow === '') ? true : (allow.toLowerCase() === 'true') : false;
+        $select.allowClear = (angular.isDefined(allow)) ? (allow === '') ? true : (allow.toString().toLowerCase() === 'true') : false;
       }
 
       attrs.$observe('allowClear', setAllowClear);
