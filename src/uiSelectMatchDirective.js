@@ -26,7 +26,7 @@ uis.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
       }
 
       attrs.$observe('allowClear', setAllowClear);
-      setAllowClear(attrs.allowClear);
+      setAllowClear(attrs.allowClear || uiSelectConfig.allowClear);
 
       if($select.multiple){
         $select.sizeSearchInput();

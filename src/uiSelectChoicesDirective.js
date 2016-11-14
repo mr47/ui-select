@@ -37,8 +37,8 @@ uis.directive('uiSelectChoices',
         throw uiSelectMinErr('rows', "Expected 1 .ui-select-choices-row but got '{0}'.", choices.length);
       }
 
-      choices.attr('ng-repeat', parserResult.repeatExpression(groupByExp))
-             .attr('ng-if', '$select.open'); //Prevent unnecessary watches when dropdown is closed
+      choices.attr('ng-repeat', parserResult.repeatExpression(groupByExp));
+     //        .attr('ng-if', '$select.open'); //Prevent unnecessary watches when dropdown is closed
     
 
       var rowsInner = tElement.querySelectorAll('.ui-select-choices-row-inner');
