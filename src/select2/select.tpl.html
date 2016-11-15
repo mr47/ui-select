@@ -14,7 +14,8 @@
        aria-owns="ui-select-choices-{{ $select.generatedId }}"
        aria-label="{{ $select.baseTitle }}"
              class="ui-select-search select2-input"
-             ng-model="$select.search">
+             ng-model="$select.search"
+			 ng-model-options="{debounce: 250}">
     </div>
     <div class="ui-select-choices"></div>
     <div class="ui-select-no-choice"></div>
