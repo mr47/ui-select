@@ -1,7 +1,7 @@
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.19.6 - 2016-11-15T08:25:49.905Z
+ * Version: 0.19.6 - 2016-11-17T12:25:05.319Z
  * License: MIT
  */
 
@@ -230,7 +230,7 @@ uis.directive('uiSelectChoices',
       // var repeat = RepeatParser.parse(attrs.repeat);
       var groupByExp = tAttrs.groupBy;
       var groupFilterExp = tAttrs.groupFilter;
-
+      var showWhen = tAttrs.showWhen;
       if (groupByExp) {
         var groups = tElement.querySelectorAll('.ui-select-choices-group');
         if (groups.length !== 1) throw uiSelectMinErr('rows', "Expected 1 .ui-select-choices-group but got '{0}'.", groups.length);
@@ -245,6 +245,9 @@ uis.directive('uiSelectChoices',
       }
 
       choices.attr('ng-repeat', parserResult.repeatExpression(groupByExp));
+	  
+	  if (showWhen) choices.attr('ng-show', showWhen); // added for speed improvents on a lot of items
+	  
      //        .attr('ng-if', '$select.open'); //Prevent unnecessary watches when dropdown is closed
     
 

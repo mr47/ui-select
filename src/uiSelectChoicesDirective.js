@@ -23,7 +23,7 @@ uis.directive('uiSelectChoices',
       // var repeat = RepeatParser.parse(attrs.repeat);
       var groupByExp = tAttrs.groupBy;
       var groupFilterExp = tAttrs.groupFilter;
-
+      var showWhen = tAttrs.showWhen;
       if (groupByExp) {
         var groups = tElement.querySelectorAll('.ui-select-choices-group');
         if (groups.length !== 1) throw uiSelectMinErr('rows', "Expected 1 .ui-select-choices-group but got '{0}'.", groups.length);
@@ -38,6 +38,9 @@ uis.directive('uiSelectChoices',
       }
 
       choices.attr('ng-repeat', parserResult.repeatExpression(groupByExp));
+	  
+	  if (showWhen) choices.attr('ng-show', showWhen); // added for speed improvents on a lot of items
+	  
      //        .attr('ng-if', '$select.open'); //Prevent unnecessary watches when dropdown is closed
     
 
